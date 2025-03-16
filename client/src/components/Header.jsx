@@ -5,8 +5,8 @@ export default function Header() {
     return (
         <header className='flex justify-between p-2 items-center border-gray-200 gap-2 shadow-[rgba(0,0,0,0,5)]'>
             <h1 className='md:text-xl font-bold flex items-center gap-1'>
-                <span className='text-red-800 text-sm md:text-xl lg:text-2xl xl:text-3xl '>Akash</span>
-                <span>Estate</span>
+                <span className='text-red-800 text-sm md:text-xl lg:text-2xl xl:text-3xl '>Find</span>
+                <span>One</span>
             </h1>
             <form className='flex items-center text-sm md:text-xl lg:text-2xl xl:text-3xl bg-white rounded-md p-2 border'>
                 <input type="text" placeholder='Search...' className='focus:outline-none w-24 sm:w-64' />
