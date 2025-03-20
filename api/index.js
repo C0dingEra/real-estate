@@ -1,12 +1,14 @@
 import express from 'express'
 import dotenv from 'dotenv';
 import mongoose from 'mongoose'
+import cors from 'cors'
 import userRoute from '../api/routes/user.route.js'
 import authRoute from '../api/routes/auth.route.js'
 dotenv.config();
 const app=express();
 
 app.use(express.json()) //allow json as the input of the server
+app.use(cors())
 
 //db connection
 mongoose.connect(process.env.MONGO_URI).then(()=>{
