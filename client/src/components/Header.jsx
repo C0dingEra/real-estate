@@ -10,17 +10,17 @@ export default function Header() {
             </h1>
             <form className='flex items-center text-sm md:text-xl lg:text-2xl xl:text-3xl bg-white rounded-md p-2 border border-gray-400 h-full md:h-full w-38 sm:w-64 md:w-100 lg:w-80 xl:w-96'>
                 <input type="text" placeholder='Search...' className='focus:outline-none w-full text-sm' />
-                <FaSearch className='cursor-pointer text-slate-600 md:text-sm'/>
+                <FaSearch className='cursor-pointer text-slate-600 md:text-sm' />
             </form>
             <ul className='flex gap-2 sm:gap-4 items-center'>
                 <Link to='/'>
-                    <li className='text-sm md:text-lg lg:text-lg xl:text-lg hidden sm:inline hover:underline'>Home</li>
+                    <li className='text-sm md:text-lg lg:text-lg xl:text-lg hidden sm:inline underline-animation hover:text-green-700'>Home</li>
                 </Link>
                 <Link to='/about'>
-                    <li className='text-sm md:text-lg lg:text-lg xl:text-lg hidden sm:inline hover:underline'>About</li>
+                    <li className='text-sm md:text-lg lg:text-lg xl:text-lg hidden sm:inline underline-animation hover:text-green-700'>About</li>
                 </Link>
                 <Link to='signin'>
-                    <li className='text-sm md:text-lg lg:text-lg xl:text-lg hover:underline'>Sign in</li>
+                    <li className='text-sm md:text-lg lg:text-lg xl:text-lg underline-animation hover:text-green-700'>Sign in</li>
                 </Link>
             </ul>
         </header>
