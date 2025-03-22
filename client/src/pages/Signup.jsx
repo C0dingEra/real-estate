@@ -43,13 +43,13 @@ export const Signup = () => {
     }
     return (
         <div className='p-3 mx-auto max-w-lg'>
-            <h1 className='text-3xl font-semibold text-center my-7'>Sign Up</h1>
+            <h1 className='text-3xl font-semibold text-center my-7 uppercase'>Sign Up</h1>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-                <input type="text" placeholder='Username' className='p-3 border rounded-lg outline-none' id='username' onChange={handleChange} />
-                <input type="email" placeholder='Email' className='p-3 border rounded-lg outline-none'
+                <input type="text" placeholder='Username' className='p-3 border border-gray-300 rounded-lg outline-none' id='username' onChange={handleChange} />
+                <input type="email" placeholder='Email' className='p-3 border border-gray-300 rounded-lg outline-none'
                     id='email' onChange={handleChange}
                 />
-                <input type="password" placeholder='Password' className='p-3 border rounded-lg outline-none' id='password' onChange={handleChange} />
+                <input type="password" placeholder='Password' className='p-3 border border-gray-300 rounded-lg outline-none' id='password' onChange={handleChange} />
                 <button
                 disabled={loading}
                 className='uppercase bg-slate-700 p-3 rounded-lg text-white hover:opacity-90 cursor-pointer disabled:opacity-80' >{loading?'loading...':'Signup'}</button>

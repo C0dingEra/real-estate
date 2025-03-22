@@ -8,9 +8,9 @@ export default function Header() {
                 <span className='text-red-800 text-xl md:text-xl lg:text-2xl xl:text-3xl '>Find</span>
                 <span className='text-xl md:text-xl lg:text-2xl xl:text-3xl'>One</span>
             </h1>
-            <form className='flex items-center text-sm md:text-xl lg:text-2xl xl:text-3xl bg-white rounded-md p-2 border h-full md:h-full'>
+            <form className='flex items-center text-sm md:text-xl lg:text-2xl xl:text-3xl bg-white rounded-md p-2 border border-gray-400 h-full md:h-full'>
                 <input type="text" placeholder='Search...' className='focus:outline-none md:w-64 w-44 text-xl' />
-                <FaSearch className='cursor-pointer text-slate-600' />
+                <FaSearch className='cursor-pointer text-slate-600 text-xl' />
             </form>
             <ul className='flex gap-2 sm:gap-4 items-center'>
                 <Link to='/'>
