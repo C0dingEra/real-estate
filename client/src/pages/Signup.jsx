@@ -42,7 +42,7 @@ export const Signup = () => {
         }
     }
     return (
-        <div className='p-3 mx-auto max-w-lg text-sm'>
+        <div className='p-3 mx-auto max-w-md text-sm'>
             <h1 className='text-2xl font-semibold text-center my-7 uppercase'>Sign Up</h1>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
                 <input type="text" placeholder='Username' className='p-3 border border-gray-300 rounded-lg outline-none' id='username' onChange={handleChange} />
