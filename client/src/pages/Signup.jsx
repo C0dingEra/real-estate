@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import OAuth from '../components/oAuth';
 
 export const Signup = () => {
     const [formData, setFormData] = useState({});
-    const [error,setError]=useState(null);
-    const [loading,setLoading]=useState(false);
-    const navigate=useNavigate();
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     const handleChange = (e) => {
         setFormData(
             {
@@ -14,27 +15,27 @@ export const Signup = () => {
             }
         )
     }
-    const handleSubmit=async(e)=>{
+    const handleSubmit = async (e) => {
         try {
             setLoading(true);
-        e.preventDefault();
-        const res=await fetch('/api/auth/signup',{
-            method:'POST',
-            headers:{
-                'Content-Type': 'application/json',
-            },
-            body:JSON.stringify(formData),
-        })
-        const data=await res.json();
-        if(data.success===false){
-            setLoading(false)
-            setError(data.message)
-            return;
-        }
-        setLoading(false);
-        setError(null);
-        navigate('/signin');
-        
+            e.preventDefault();
+            const res = await fetch('/api/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            const data = await res.json();
+            if (data.success === false) {
+                setLoading(false)
+                setError(data.message)
+                return;
+            }
+            setLoading(false);
+            setError(null);
+            navigate('/signin');
+
         } catch (error) {
             setLoading(false)
             setError(error.message)
@@ -51,9 +52,9 @@ export const Signup = () => {
                 />
                 <input type="password" placeholder='Password' className='p-3 border border-gray-300 rounded-lg outline-none' id='password' onChange={handleChange} />
                 <button
-                disabled={loading}
-                className='uppercase bg-slate-700 p-3 rounded-lg text-white hover:opacity-90 cursor-pointer disabled:opacity-80' >{loading?'loading...':'Signup'}</button>
-                <button className='uppercase bg-red-700 p-3 rounded-lg text-white hover:opacity-90 cursor-pointer'>continue with google</button>
+                    disabled={loading}
+                    className='uppercase bg-slate-700 p-3 rounded-lg text-white hover:opacity-90 cursor-pointer disabled:opacity-80' >{loading ? 'loading...' : 'Signup'}</button>
+                <OAuth />
             </form>
             <div className='flex mt-5 gap-2'>
                 <p>have an account?</p>
