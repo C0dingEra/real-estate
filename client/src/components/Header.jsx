@@ -1,11 +1,13 @@
 import React from 'react';
 import { FaSearch } from "react-icons/fa";
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 export default function Header() {
+    const { currentUser } = useSelector((state) => state.user)
     const navigate = useNavigate()
     return (
         <header className='flex justify-between p-2 items-center border-slate-200 gap-2 shadow-md bg-slate-300 h-[70px]'>
-            <h1 onClick={()=>navigate('/')} className='md:text-xl font-bold flex items-center gap-1 cursor-pointer'>
+            <h1 onClick={() => navigate('/')} className='md:text-xl font-bold flex items-center gap-1 cursor-pointer'>
                 <span className='text-red-800 text-sm md:text-xl lg:text-2xl xl:text-3xl'>Find</span>
                 <span className='text-sm md:text-xl lg:text-2xl xl:text-3xl'>One</span>
             </h1>
@@ -20,8 +22,9 @@ export default function Header() {
                 <Link to='/about'>
                     <li className='text-sm md:text-lg lg:text-lg xl:text-lg hidden sm:inline underline-animation hover:text-green-700'>About</li>
                 </Link>
-                <Link to='signin'>
-                    <li className='text-sm md:text-lg lg:text-lg xl:text-lg underline-animation hover:text-green-700'>Sign in</li>
+                <Link to='/profile'>
+                    {currentUser ? (<img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt="profile" />) : (<li className='text-sm md:text-lg lg:text-lg xl:text-lg underline-animation hover:text-green-700'>Sign in</li>)}
+
                 </Link>
             </ul>
         </header>
