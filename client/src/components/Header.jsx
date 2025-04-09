@@ -23,7 +23,7 @@ export default function Header() {
                     <li className='text-sm md:text-lg lg:text-lg xl:text-lg hidden sm:inline underline-animation hover:text-green-700'>About</li>
                 </Link>
                 <Link to='/profile'>
-                    {currentUser ? (<img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt="profile" />) : (<li className='text-sm md:text-lg lg:text-lg xl:text-lg underline-animation hover:text-green-700'>Sign in</li>)}
+                    {currentUser ? (<img  className='rounded-full h-7 w-7' src={currentUser.avatar} alt="profile" />) : (<li className='text-sm md:text-lg lg:text-lg xl:text-lg underline-animation hover:text-green-700'>Sign in</li>)}
 
                 </Link>
             </ul>
