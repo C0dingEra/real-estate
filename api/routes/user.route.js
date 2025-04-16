@@ -1,9 +1,9 @@
-import express from 'express'
-import { test, updateUser } from '../controllers/user.controller.js';
-import { verifyToken } from '../utils/verifyUser.js';
-const router=express.Router();
+import express from 'express';
+import { test, upload, uploadProfileMiddleware } from '../controllers/user.controller.js';
 
-router.get('/test',test)
-router.post('/update/:id',verifyToken,updateUser)
+const router = express.Router();
+
+router.get('/test', test);
+router.post('/upload-profile', uploadProfileMiddleware, upload);
 
 export default router;
